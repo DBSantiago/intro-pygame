@@ -1,10 +1,16 @@
-from turtle import width
+import sys
 import pygame
 
 pygame.init()
 
-width = 100
+width = 400
+height = 300
 
-height = 200
+surface = pygame.display.set_mode((width, height))
+pygame.display.set_caption("Hola Mundo!")
 
-pygame.display.set_mode((width, height))
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
