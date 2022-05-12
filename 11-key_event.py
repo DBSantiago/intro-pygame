@@ -18,18 +18,18 @@ teal = pygame.Color(0, 128, 128)
 
 my_color = (200, 90, 130)
 
-codi_image = pygame.image.load("intro-pygame/images/codi.png")
+codi_image = pygame.image.load("images/codi.png")
 codi_image_rect = codi_image.get_rect()
 codi_image_rect.center = (width // 2, height // 2)
 
-font = pygame.font.Font("intro-pygame/fonts/RussoOne-Regular.ttf", 72)
+font = pygame.font.Font("fonts/RussoOne-Regular.ttf", 72)
 text_welcome = font.render("Welcome!", True, teal)
 text_welcome_rect = text_welcome.get_rect()
 text_welcome_rect.center = (width // 2, 60)
 
 
 pygame.mixer.music.load(
-    "intro-pygame/sounds/1.-introduccion_sounds_Haggstrom.mp3")
+    "sounds/1.-introduccion_sounds_Haggstrom.mp3")
 pygame.mixer.music.set_volume(0.60)
 pygame.mixer.music.play(-1, 0.0)
 
@@ -40,7 +40,17 @@ while True:
             sys.exit()
 
         if event.type == pygame.KEYDOWN:
-            print("Tecla presionada.")
+            if event.key == pygame.K_LEFT or event.key == pygame.K_a:
+                print("Tecla izquierda presionada.")
+
+            if event.key == pygame.K_RIGHT or event.key == pygame.K_d:
+                print("Tecla derecha presionada.")
+
+            if event.key == pygame.K_DOWN or event.key == pygame.K_s:
+                print("Tecla abajo presionada.")
+
+            if event.key == pygame.K_UP or event.key == pygame.K_w:
+                print("Tecla arriba presionada.")
 
         if event.type == pygame.KEYUP:
             print("Tecla liberada.")
