@@ -39,21 +39,21 @@ while True:
             pygame.quit()
             sys.exit()
 
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_LEFT or event.key == pygame.K_a:
-                print("Tecla izquierda presionada.")
-
-            if event.key == pygame.K_RIGHT or event.key == pygame.K_d:
-                print("Tecla derecha presionada.")
-
-            if event.key == pygame.K_DOWN or event.key == pygame.K_s:
-                print("Tecla abajo presionada.")
-
-            if event.key == pygame.K_UP or event.key == pygame.K_w:
-                print("Tecla arriba presionada.")
-
         if event.type == pygame.KEYUP:
             print("Tecla liberada.")
+
+    pressed = pygame.key.get_pressed()
+    if pressed[pygame.K_w] or pressed[pygame.K_UP]:
+        print("Arriba")
+
+    if pressed[pygame.K_a] or pressed[pygame.K_LEFT]:
+        print("Izquierda")
+
+    if pressed[pygame.K_s] or pressed[pygame.K_DOWN]:
+        print("Abajo")
+
+    if pressed[pygame.K_d] or pressed[pygame.K_RIGHT]:
+        print("Derecha")
 
     surface.fill(black)
     surface.blit(codi_image, codi_image_rect)
